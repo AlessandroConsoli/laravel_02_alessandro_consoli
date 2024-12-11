@@ -20,7 +20,7 @@
             <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Homepage</a>
             <a class="nav-link" href="{{ route('chi.siamo') }}">Chi siamo</a>
             <a class="nav-link" href="{{route('shop')}}">Negozio</a>
-            <a class="nav-link" href="{{route('services')}}">Servizi</a>
+            {{-- <a class="nav-link" href="{{route('product_detail')}}">Dettagli prodotto</a> --}}
           </div>
         </div>
       </div>

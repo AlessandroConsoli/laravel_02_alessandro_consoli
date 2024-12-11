@@ -20,29 +20,32 @@
             <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Homepage</a>
             <a class="nav-link" href="{{ route('chi.siamo') }}">Chi siamo</a>
             <a class="nav-link" href="{{route('shop')}}">Negozio</a>
-            <a class="nav-link" href="{{route('services')}}">Servizi</a>
+            {{-- <a class="nav-link" href="{{route('product_detail')}}">Dettagli prodotto</a> --}}
           </div>
         </div>
       </div>
     </nav>
-    <!-- NAVBAR END -->
+    <!-- NAVBAR END --> 
+    
 
-<div class="container-fluid">
-    <div class="row">
+    <div class="container-fluid">
+      <div class="row">
         <div class="col-12 d-flex align-items-center justify-content-center mt-5">
-            @foreach ($products as $product)
-            <div class="card mx-5" style="width: 18rem;">
-              <img src="https://picsum.photos/200" class="card-img-top" alt="Il top di gamma di casa {{$product['brand']}}">
-              <div class="card-body">
-                <h5 class="card-title">{{$product['brand']}} - {{$product['productName']}}</h5>
-                <p class="card-text">Il top di gamma di casa {{$product['brand']}}</p>
-                <a href="{{route('services')}}" class="btn btn-primary">Scopri di più su questa offerta!</a>
-              </div>
+          {{-- BOOTSTRAP CARDS --}}
+          @foreach ($products as $product)
+          <div class="card mx-5" style="width: 18rem;">
+            <img src="https://picsum.photos/200" class="card-img-top" alt="Il top di gamma di casa {{$product['brand']}}">
+            <div class="card-body">
+              <h5 class="card-title">{{$product['brand']}} - {{$product['productName']}}</h5>
+              <p class="card-text">Il top di gamma di casa {{$product['brand']}}</p>
+              <a href="{{route('product_detail' , ['model'=>$product['brand']])}}" class="btn btn-primary">Scopri di più su questa offerta!</a>
             </div>
-            @endforeach
+          </div>
+          @endforeach
+          {{-- BOOTSTRAP CARDS END --}}
         </div>
+      </div>
     </div>
-</div>
 
 
 

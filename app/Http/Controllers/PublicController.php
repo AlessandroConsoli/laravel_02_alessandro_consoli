@@ -11,7 +11,7 @@ class PublicController extends Controller
         return view('Homepage',['titolo'=>$title]);
     }
 
-    PUBLIC function usersList(){
+    public function usersList(){
 
         $arrayUsers = [
             ['name'=>'Vercinge', 'surname'=>'Torige',],
@@ -32,11 +32,24 @@ class PublicController extends Controller
             ['brand'=>'Apple', 'productName'=>'iPhone 16'],
         ];
 
+
+
         return view('shop', ['products'=>$arrayProducts]);
     }
 
-    public function showServices(){ 
-        return view('services');
+    public function showDetails($model){ 
+
+        $arrayProducts = [
+            ['brand'=>'Samsung', 'productName'=>'S24'],
+            ['brand'=>'Huawei', 'productName'=>'Pura 70'],
+            ['brand'=>'Xiaomi', 'productName'=>'13T Pro'],
+            ['brand'=>'Apple', 'productName'=>'iPhone 16'],
+        ];
+        foreach ($arrayProducts as $product) {
+            if ($model == $product['brand']) {
+                return view('productDetail', ['product'=>$product]);
+            }            
+        }
     }
 
 }

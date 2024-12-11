@@ -12,5 +12,5 @@ Route::get('/about_us', [PublicController::class, 'usersList'])->name('chi.siamo
 
 Route::get('/shop', [PublicController::class, 'shopPage'])->name('shop');
 
-Route::get('/services', [PublicController::class, 'showServices'])->name('services');
+Route::get('/productDetail/{model}', [PublicController::class, 'showDetails'])->name('product_detail');
 

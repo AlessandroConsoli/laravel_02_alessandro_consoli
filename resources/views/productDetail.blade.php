@@ -20,7 +20,7 @@
             <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Homepage</a>
             <a class="nav-link" href="{{ route('chi.siamo') }}">Chi siamo</a>
             <a class="nav-link" href="{{route('shop')}}">Negozio</a>
-            <a class="nav-link" href="{{route('services')}}">Servizi</a>
+            {{-- <a class="nav-link" href="{{route('product_detail')}}">Dettagli prodotto</a> --}}
           </div>
         </div>
       </div>
@@ -28,12 +28,15 @@
     <!-- NAVBAR END -->
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row align-items-center justify-content-center">
         <div class="col-12 d-flex align-items-center justify-content-center mt-5">
-            <h1>Questa pagina è in costruzione</h1>
+            <h1>{{$product['brand']}}</h1>
         </div>
         <div class="col-12 d-flex align-items-center justify-content-center">
-            <h2>Stiamo lavorando per voi</h2>
+            <h2>{{$product['productName']}}</h2>
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+          <img src="https://png.pngtree.com/thumb_back/fw800/background/20230518/pngtree-broken-phone-is-shown-on-a-table-image_2587268.jpg" alt="Top di gamma">
         </div>
     </div>
 </div>
